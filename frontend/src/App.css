@@ -1,0 +1,696 @@
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: 3rem;
+    /*========== Colors ==========*/
+    /* Change favorite color */
+    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #fff;
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== Margenes Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*========== Variables Dark theme ==========*/
+/*========== Button Dark/Light ==========*/
+/*==================== BASE ====================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth; 
+}
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-3);
+}
+
+.section__title, 
+.section__subtitle {
+  text-align: center;
+}
+
+/*==================== LAYOUT ====================*/
+.container {
+  max-width: 768px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
+.nav__title
+{
+margin-left: 5rem;
+}
+
+.nav__links
+{
+  margin-right: 2rem;
+}
+
+.nav-item
+{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.nav__buttons
+{
+  width: 6rem;
+}
+
+.title
+{
+  font-size: 4.5rem;
+  color: #090a31;
+  text-align: left;
+  margin-left: 5rem;
+}
+.subtitle
+{
+  width: 82%;
+  text-align: left;
+  font-size: 1.7rem;
+  color: darkgray;
+  margin-left: 5rem;
+  font-weight: 400;
+}
+
+.getstarted__button_navbar
+{
+  width: 6rem;
+  height: 2rem;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  border: none;
+  border-radius: 10px;
+  background-color: #6d57e0;
+  color: rgb(245, 243, 243);
+}
+.getstarted__button
+{
+   width: 10rem;
+  height: 2.5rem;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  border: none;
+  border-radius: 13px;
+  background-color: #6d57e0;
+  box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.3);
+  color: rgb(244, 239, 239);
+}
+.text__section
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home__section
+{
+  margin-top: 8rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+  column-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.button__section
+{
+  margin-left: 5rem;
+}
+
+.img__section
+{
+  margin-right: 3rem;
+}
+
+
+
+
+
+
+/* rishi library css */
+:root {
+
+  --rishi-color-brand: #353535;
+
+  /* COLOR PALETTE */
+
+  --rishi-color-n-000: #fff;
+  --rishi-color-n-100: #ebebeb;
+  --rishi-color-n-300: #aeaeae;
+  --rishi-color-n-500: #353535;
+  --rishi-color-n-700: #282828;
+  --rishi-color-n-900: #1a1a1a;
+
+  /* BACKGROUND COLOR */
+  
+  --rishi-color-background-primary: #10172a;
+
+  /* BORDER COLOR */
+
+  --rishi-color-border: var(--rishi-color-n-100);
+
+  /*------------------------------------------------------------
+  |
+  | 1.3 LAYOUT
+  |
+  ------------------------------------------------------------*/
+  
+  --rishi-layout-container: 1.25rem;
+  --rishi-layout-grid     : 3.625rem;
+  --rishi-layout-gutter   : 1rem;
+
+  /* GAP */
+
+  --rishi-gap-cta    : .75rem;
+  --rishi-gap-content: 1.25rem;
+
+  /* BORDER RADIUS */
+  
+  --rishi-radius-button: 5rem;
+  --rishi-radius-input : 5rem;
+  --rishi-radius-card  : .5rem;
+
+}
+
+/*--------------------------------------------------------------
+5.0 LAYOUT
+--------------------------------------------------------------*/
+
+.rishi-layout-container {
+  padding-left: var(--rishi-layout-container);
+  padding-right: var(--rishi-layout-container);
+}
+
+.rishi-layout-flex,
+.rishi-layout-grid {
+  align-items: center;
+  justify-content: center;
+}
+
+
+.rishi-layout-grid { display: grid; }
+
+/*--------------------------------------------------------------
+6.0 COMPONENT
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+|
+| 6.1 CTA
+|
+--------------------------------------------------------------*/
+
+.rishi-component-cta {
+  flex-direction: column;
+  row-gap: var(--rishi-gap-cta);
+}
+
+
+/*--------------------------------------------------------------
+|
+| 6.4 CARD
+|
+--------------------------------------------------------------*/
+
+.rishi-component-card {
+  border: .0625rem solid var(--rishi-color-border);
+  border-radius: var(--rishi-radius-card);
+  overflow: hidden;
+  padding: 2.25rem 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.rishi-component-card--image { margin-bottom: 2.25rem; }
+
+.rishi-component-card--title { margin-bottom: .5rem; }
+
+/*--------------------------------------------------------------
+7.0 SECTION
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+|
+| 7.3 CONTENT
+|
+--------------------------------------------------------------*/
+
+.rishi-section-content {
+  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;
+}
+
+.rishi-section-content__layout { row-gap: var(--rishi-gap-content); }
+
+/*--------------------------------------------------------------
+|
+| 7.4 CLOSE
+|
+--------------------------------------------------------------*/
+
+.rishi-section-close {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  text-align: center;
+}
+
+
+/*--------------------------------------------------------------
+8.0 MEDIA
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+|
+| 8.1 768PX
+|
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 48rem) {
+
+  /*------------------------------------------------------------
+  VARIABLE
+  ------------------------------------------------------------*/
+  
+  :root {
+
+    /*----------------------------------------------------------
+    |
+    | TYPOGRAPHY
+    |
+    ----------------------------------------------------------*/
+
+    /* FONT SIZE */
+
+    --rishi-typography-h1: 2.1875rem;
+    --rishi-typography-h2: 1.75rem;
+    --rishi-typography-h4: 1.125rem;
+    --rishi-typography-p : 1.125rem;
+    --rishi-typography-s : .875rem;
+
+    /* MARGIN */
+
+    --rishi-typography-margin-body: 1.25rem;
+
+    /*----------------------------------------------------------
+    |
+    | LAYOUT
+    |
+    ----------------------------------------------------------*/
+
+    --rishi-layout-container: 4.25rem;
+    --rishi-layout-gutter   : 1.5rem;
+
+    /* GAP */
+
+    --rishi-gap-content: 1.5rem;
+
+  }
+
+  /*------------------------------------------------------------
+  LAYOUT
+  ------------------------------------------------------------*/
+
+  .rishi-layout-container,
+  .rishi-layout-column-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rishi-layout-grid-2 {
+    column-gap: var(--rishi-layout-gutter);
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
+  .rishi-layout-grid-2 div:nth-of-type(2) {
+    justify-self: start;
+    position: relative;
+    top: calc(50% + (var(--rishi-layout-gutter) / 2));
+  }
+
+  .rishi-layout-grid-2 div:nth-of-type(odd) { justify-self: end; }
+
+  .rishi-layout-column-4 {
+    width: calc((var(--rishi-layout-grid) * 4) +
+           (var(--rishi-layout-gutter) * 3));
+    border-color: #64748b;
+  }
+
+  .rishi-layout-column-6 {
+    width: calc((var(--rishi-layout-grid) * 6) +
+           (var(--rishi-layout-gutter) * 5));
+  }
+
+  /*------------------------------------------------------------
+  COMPONENT
+  ------------------------------------------------------------*/
+
+  /*------------------------------------------------------------
+  |
+  | CARD
+  |
+  ------------------------------------------------------------*/
+
+  .rishi-component-card {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+
+  /*------------------------------------------------------------
+  SECTION
+  ------------------------------------------------------------*/
+
+  /*------------------------------------------------------------
+  |
+  | HEADER
+  |
+  ------------------------------------------------------------*/
+
+  .rishi-section-header {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  /*------------------------------------------------------------
+  |
+  | CONTENT
+  |
+  ------------------------------------------------------------*/
+
+  .rishi-section-content {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  /*------------------------------------------------------------
+  |
+  | FOOTER
+  |
+  ------------------------------------------------------------*/
+
+  .rishi-section-footer {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+  
+}
+
+/*--------------------------------------------------------------
+|
+| 8.2 1024PX
+|
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 64rem) {
+
+  /*------------------------------------------------------------
+  VARIABLE
+  ------------------------------------------------------------*/
+
+  :root {
+
+    /*----------------------------------------------------------
+    |
+    | LAYOUT
+    |
+    ----------------------------------------------------------*/
+
+    --rishi-layout-container: 0;
+  
+  }
+
+  /*------------------------------------------------------------
+  TYPOGRAPHY
+  ------------------------------------------------------------*/
+
+  a { transition: all 250ms ease; }
+
+  a:not(.rishi-component-button):hover {
+    color: var(--rishi-color-typography-body);
+  }
+
+  /*------------------------------------------------------------
+  LAYOUT
+  ------------------------------------------------------------*/
+  
+  .rishi-layout-container { width: 60rem; }
+
+}
+
+/*--------------------------------------------------------------
+|
+| 8.3 1200PX
+|
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 75rem) {
+
+  /*------------------------------------------------------------
+  VARIABLE
+  ------------------------------------------------------------*/
+
+  :root {
+
+    /*----------------------------------------------------------
+    |
+    | TYPOGRAPHY
+    |
+    ----------------------------------------------------------*/
+
+    /* FONT SIZE */
+
+    --rishi-typography-h1: 2.75rem;
+    --rishi-typography-h2: 2.1875rem;
+    --rishi-typography-h4: 1.4375rem;
+
+    /* MARGIN */
+
+    --rishi-typography-margin-heading: 1rem;
+    --rishi-typography-margin-body   : 1.75rem;
+
+    /*----------------------------------------------------------
+    |
+    | LAYOUT
+    |
+    ----------------------------------------------------------*/
+
+    --rishi-layout-grid  : 4rem;
+    --rishi-layout-gutter: 2rem;
+
+    /* GAP */
+    
+    --rishi-gap-content: 2rem;
+    
+  }
+
+  /*------------------------------------------------------------
+  TYPOGRAPHY
+  ------------------------------------------------------------*/
+
+  .rishi-text-intro { font-size: var(--rishi-typography-h4); }
+
+  /*------------------------------------------------------------
+  LAYOUT
+  ------------------------------------------------------------*/
+  
+  .rishi-layout-container { width: 70rem; }
+
+  /*------------------------------------------------------------
+  SECTION
+  ------------------------------------------------------------*/
+
+
+  /*------------------------------------------------------------
+  |
+  | CONTENT
+  |
+  ------------------------------------------------------------*/
+
+  .rishi-section-content {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+
+
+}
+.scroll__component
+{
+  display: flex;
+  justify-content: center;
+}
+.uil-mouse-alt
+{
+  font-size: 2.5rem;
+  margin-top: 2rem;
+  transition: .3s;
+  margin-bottom: 3rem;
+}
+
+.uil-mouse-alt:hover
+{
+  transform: translateY(-.75rem);
+}
+
+.footer
+{
+  padding-top: 2rem;
+}
+
+.footer__container
+{
+  row-gap: 3.5rem;
+}
+
+.footer__bg
+{
+  background-color: var(--first-color-second);
+  padding: 2rem 0 3rem;
+}
+
+.footer__title
+{
+  font-size: var(--h1-font-size);
+  margin-bottom: var(--mb-0-25);
+}
+
+.footer__subtitle
+{
+  font-size: var(--small-font-size);
+}
+
+.footer__links
+{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.footer__link:hover
+{
+  color: var(--first-color-lighter);
+}
+
+.footer__social
+{
+  font-size: 1.25rem;
+  margin-right: var(--mb-1-5);
+}
+
+.footer__social:hover
+{
+  color: var(--first-color-lighter);
+}
+
+.footer__copy
+{
+  font-size: var(--smaller-font-size);
+  text-align: center;
+  color: var(--text-color-light);
+  margin-top: var(--mb-3);
+}
+
+.footer__title,
+.footer__subtitle,
+.footer__link,
+.footer__social{
+  color: white;
+}
