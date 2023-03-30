@@ -646,7 +646,7 @@ margin-left: 5rem;
 .footer__bg
 {
   background-color: var(--first-color-second);
-  padding: 2rem 0 3rem;
+  padding: 1.5rem 0 3rem;
 }
 
 .footer__title
@@ -688,7 +688,7 @@ margin-left: 5rem;
   font-size: var(--smaller-font-size);
   text-align: center;
   color: var(--text-color-light);
-  margin-top: var(--mb-3);
+  margin-top: var(--mb-1);
 }
 
 .footer__title,
