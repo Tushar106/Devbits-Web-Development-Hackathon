@@ -499,6 +499,13 @@ Laptops and small screen – 769px — 1024px.*/
   margin: 0 5rem;
   font-weight: 400;
 }
+.uil-mouse-alt {
+  display: none;
+}
+.scroll__component
+{
+  margin-bottom: 7rem;
+}
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -532,6 +539,9 @@ Laptops and small screen – 769px — 1024px.*/
   {
     display: none;
   }
+  .uil-mouse-alt {
+  display: none;
+}
 
 .title-about {
   font-size: 3rem;
@@ -545,6 +555,10 @@ Laptops and small screen – 769px — 1024px.*/
   color: darkgray;
   margin: 0 5rem;
   font-weight: 400;
+}
+.scroll__component
+{
+  margin-bottom: 7rem;
 }
 }
 
@@ -598,4 +612,11 @@ Laptops and small screen – 769px — 1024px.*/
   font-weight: 300;
 }
 
+.uil-mouse-alt {
+  display: none;
+}
+.scroll__component
+{
+  margin-bottom: 7rem;
+}
 }
