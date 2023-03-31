@@ -1,0 +1,33 @@
+.title
+{
+  font-size: 4rem;
+  color: #090a31;
+  text-align: left;
+  margin-left: var(--mb-3);
+}
+.subtitle
+{
+  width: 82%;
+  text-align: left;
+  font-size: var(--mb-1-5);
+  color: darkgray;
+  margin-left: var(--mb-3);
+  font-weight: 400;
+}
+
+.title
+{
+  font-size: 4rem;
+  color: #090a31;
+  text-align: left;
+  margin-left: var(--mb-3);
+}
+.subtitle
+{
+  width: 82%;
+  text-align: left;
+  font-size: var(--mb-1-5);
+  color: darkgray;
+  margin-left: var(--mb-3);
+  font-weight: 400;
+}
