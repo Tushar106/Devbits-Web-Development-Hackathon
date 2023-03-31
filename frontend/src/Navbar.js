@@ -1,6 +1,10 @@
 import React from 'react'
+import Login from './Login';
+import { useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
+  const navigate=useNavigate();
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -45,7 +49,7 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-            <button className="getstarted__button_navbar">Join</button>
+            <button className="getstarted__button_navbar" onClick={()=>{navigate("/login")}}>Join</button>
           </div>
         </div>
       </nav>
